@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bricks 'N' Break Game </title>
+</head>
+<style>
+body {
+  font-family: 'PixelFont';
+  text-align: center;   
+  background-image: url("ikaduha.gif");
+  background-position: center;
+  height: 100vh ;
+  background-size: cover;
+}
+button {
+ background-color: #eee;
+ border: none;
+ padding: 1rem;
+ font-size: 1rem;
+ width: 10em;
+ border-radius: 1rem;
+ color: lightcoral;
+ box-shadow: 0 0.4rem #dfd9d9;
+ cursor: pointer;
+}
+
+button:active {
+ color: white;
+ box-shadow: 0 0.2rem #dfd9d9;
+ transform: translateY(0.2rem);
+}
+
+button:hover:not(:disabled) {
+ background: lightcoral;
+ color: white;
+ text-shadow: 0 0.1rem #bcb4b4;
+}
+
+button:disabled {
+ cursor: auto;
+ color: grey;
+}
+div{
+    font-size: 80px;
+
+}
+
+</style>
+<body>
+    <br></br>
+    <br></br> 
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+<div>Welcome to Bricks 'N' Break Game </div>
+
+<button onclick="startGame()">Start Game</button>
+
+    <script>
+        function startGame() {
+            window.location.href="file:///C:/Users/GABRIEL/Desktop/name%20ni/duwa/brick%20breaker.html";
+        }
+    </script>
+
+<button id="exitButton" class="button">Exit</button>
+</body>
+</html>
