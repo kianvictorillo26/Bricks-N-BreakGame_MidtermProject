@@ -11,10 +11,10 @@ var ballRadius = 10;
 var boatImage = new Image();
 boatImage.src = 'mayta.gif';
 var boatPaddle = {
-    width: 250, // Adjust the width of the boat paddle
-    height: 70, // Adjust the height of the boat paddle
-    x: canvas.width / 2 - 50, // Adjust the initial x-coordinate of the boat paddle
-    y: canvas.height - 60, // Adjust the initial y-coordinate of the boat paddle
+    width: 250,
+    height: 70, 
+    x: canvas.width / 2 - 50, 
+    y: canvas.height - 60, 
 };
 var rightPressed = false;
 var leftPressed = false;
