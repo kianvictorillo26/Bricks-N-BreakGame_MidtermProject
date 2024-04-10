@@ -9,10 +9,10 @@ var dx = 4;
 var dy = -4;
 var ballRadius = 10;
 var boatImage = new Image();
-boatImage.src = 'mayta.gif';
+boatImage.src = 'Untitled-design-unscreen.gif';
 var boatPaddle = {
-    width: 250,
-    height: 70, 
+    width: 280,
+    height: 65, 
     x: canvas.width / 2 - 50, 
     y: canvas.height - 60, 
 };
