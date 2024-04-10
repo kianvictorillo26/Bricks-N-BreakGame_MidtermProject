@@ -7,8 +7,9 @@
 <link rel="icon" href="apo.jpg" type="image">
 </head>
 <style>
+
+
 body {
-  font-family: 'PixelFont';
   text-align: center;   
   background-image: url("ikaduha.gif");
   background-position: center;
@@ -21,7 +22,7 @@ button {
  padding: 1rem;
  font-size: 1rem;
  width: 10em;
- border-radius: 1rem;
+ border-radius: 5rem;
  color: lightcoral;
  box-shadow: 0 0.4rem #dfd9d9;
  cursor: pointer;
@@ -44,6 +45,7 @@ button:disabled {
  color: grey;
 }
 div{
+    font-family: 'Roboto', sans-serif;
     font-size: 80px;
 
 }
@@ -65,15 +67,15 @@ div{
 
     <script>
         function startGame() {
-            window.location.href="file:///C:/Users/GABRIEL/Desktop/name%20ni/duwa/brick%20breaker.html";
+            window.location.href="file:///C:/Users/GABRIEL/Desktop/name%20ni/ikaduha/index.html";
         }
     </script>
 
 <button id="exitButton" class="button">Exit</button>
 <script>
-    function closeWindow() {
-    window.close(); 
-}
-</script>
+    document.getElementById("exitButton").addEventListener("click", function() {
+      window.close();
+    });
+</script>  
 </body>
 </html>
