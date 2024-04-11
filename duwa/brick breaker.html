@@ -1,39 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Bricks 'N' Break Game</title>
-	<link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="apo.jpg" type="image">
-</head>
-<body>
-<style>
-	body {
-  font-family: Arial, sans-serif;
-  text-align: center;   background-image: url("ikaduha.gif");
-  background-position: center;
-  height: 100vh ;
-  background-size: cover;
-}
-.button {
-  height: 30px;
-  width: 50px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  margin: 10px;
-}
-text{
-	color: black;
-}
-</style>
-<canvas id="canvas1" width="1250px" height="600px">
-</canvas>
-<script src="script.js"></script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bricks 'N' Break Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="apo.jpg" type="image" />
+    <script src="sweetalert.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("download (1).gif");
+        background-position: center;
+        height: 100vh;
+        background-size: cover;
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+      }
+      .button {
+        height: 30px;
+        width: 50px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        margin: 10px;
+      }
+      text {
+        color: black;
+      }
+      .canvas1 {
+        position: absolute;
+      }
+      .ulaps {
+        margin-top: 10px;
+        position: absolute;
+        z-index: 1;
+        display: none;
+        flex-direction: column;
+        gap: -10px;
+      }
+      .ulap-wrapper {
+        top: -10px;
+        position: relative;
+        height: 300px;
+        width: 100vw;
+      }
+      img {
+        height: 300px;
+        width: 300px;
+        object-fit: contain;
+        left: -20vw;
+        position: absolute;
+      }
+      .ulaps img:nth-child(1) {
+        animation: 10s move infinite;
+        transition: 10s ease;
+        transition-delay: 1s;
+        position: absolute;
+        top: -20px;
+      }
+      .ulaps img:nth-child(2) {
+        animation: 10s move infinite;
+        animation-delay: 1s;
+        transition: 10s ease;
+        transition-delay: 1s;
+        top: -40px;
+      }
+      .ulaps img:nth-child(3) {
+        animation: 10s move infinite;
+        animation-delay: 3s;
+        transition: 10s ease;
+        transition-delay: 1s;
+        top: -60px;
+      }
+      .ulaps img:nth-child(4) {
+        animation: 10s move infinite;
+        animation-delay: 4s;
+        transition: 10s ease;
+        transition-delay: 1s;
+        top: -80px;
+      }
+      @keyframes move {
+        from {
+          left: 1vw;
+        }
+        to {
+          left: 100vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ulaps">
+      <div class="ulap-wrapper">
+        <img src="ulap.png" />
+        <img src="ulap.png" />
+        <img src="ulap.png" />
+        <img src="ulap.png" />
+      </div>
+    </div>
+    <div>
+      <canvas id="canvas1" width="1250px" height="600px"> </canvas>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

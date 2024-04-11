@@ -1,65 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bricks 'N' Break Game</title>
-  <link rel="icon" href="apo.jpg" type="image">
-  <style>
-  body {
-    text-align: center;
-    background-image: url("ikaduha.gif");
-    background-position: center;
-    height: 100vh ;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f3f3f3;
-  }
-  button:hover:not(:disabled) {
- background: rgb(255, 255, 255);
- color: rgb(0, 0, 0);
- text-shadow: 0 0.1rem #bcb4b4;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bricks 'N' Break Game</title>
+    <link rel="icon" href="apo.jpg" type="image" />
+    <style>
+      body {
+        text-align: center;
+        background-image: url("ikaduha.gif");
+        background-position: center;
+        height: 100vh;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f3f3f3;
+      }
+      button:hover:not(:disabled) {
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        text-shadow: 0 0.1rem #bcb4b4;
+      }
 
- .container {
-    text-align: center;
-  }
+      .container {
+        text-align: center;
+      }
 
- .difficulty-options {
-    margin-top: 20px;
-  }
+      .difficulty-options {
+        margin-top: 20px;
+      }
 
- .btn {
-    padding: 10px 20px;
-    font-size: 18px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Choose Your Difficulty</h1>
-    <div class="difficulty-options">
-      <button id="easy-btn" class="btn" onclick="setDifficulty('easy')">Easy</button>
-      <script>
-        function setDifficulty() {
-            window.location.href="file:///C:/Users/GABRIEL/Desktop/name%20ni/duwa/brick%20breaker.html";
-        }</script>
-      <button id="medium-btn" class="btn" onclick="setDifficulty('medium')">Medium</button>
-      <button id="hard-btn" class="btn" onclick="setDifficulty('difficult')">Difficult</button>
+      .btn {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 0 10px;
+        cursor: pointer;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Choose Your Difficulty</h1>
+      <div class="difficulty-options">
+        <button id="easy-btn" class="btn" onclick="setDifficulty('10')">
+          Easy
+        </button>
+        <button id="medium-btn" class="btn" onclick="setDifficulty('3')">
+          Medium
+        </button>
+        <button id="hard-btn" class="btn" onclick="setDifficulty('1')">
+          Difficult
+        </button>
+      </div>
     </div>
-  </div>
-</body>
+    <script>
+      function setDifficulty(e) {
+        localStorage.setItem("difficulty", e);
+        window.location.href = "/duwa/brick%20breaker.html";
+      }
+    </script>
+  </body>
 </html>

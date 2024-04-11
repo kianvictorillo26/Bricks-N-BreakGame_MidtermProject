@@ -1,4 +1,5 @@
 var canvas = document.getElementById("canvas1");
+const difficulty = window.localStorage.getItem("difficulty")
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 var ballImage = new Image();
@@ -27,16 +28,26 @@ var brickOffSetTop = 30;
 var brickOffSetLeft = 30;
 var score = 0;
 var lives = 3;
-
 var bricks = [];
-
+let gameOver = false
+let startInterval
 for (let c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
     for (let r = 0; r < brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
-
+function stop(text) {
+    Swal.fire({
+        title: text,
+        icon: "warning", 
+        confirmButtonText: "Try again"
+    }).then( a => {
+        if(a.isConfirmed) {
+            document.location.reload()
+        }
+    })
+}
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
@@ -50,6 +61,9 @@ function mouseMoveHandler(e) {
 }
 
 function drawBricks() {
+    if(difficulty === "1") {
+        brickOffSetTop += 0.08
+    }
     for (let c = 0; c < brickColumnCount; c++) {
         for (let r = 0; r < brickRowCount; r++) {
             if (bricks[c][r].status == 1) {
@@ -107,8 +121,7 @@ function collisionDetection() {
                     b.status = 0;
                     ++score;
                     if (brickColumnCount * brickRowCount == score) {
-                        alert("YOU WIN");
-                        document.location.reload();
+                        stop("You Win")
                     }
                 }
             }
@@ -130,12 +143,14 @@ function drawLives() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    drawBricks();
-    drawLives();
-    drawBall();
-    drawBoatPaddle();
     drawScore();
     collisionDetection();
+    if(!gameOver) {
+        drawBricks();
+        drawLives();
+        drawBall();
+        drawBoatPaddle();
+    }
 
     if (y + dy < ballRadius) {
         dy = -dy;
@@ -148,8 +163,8 @@ function draw() {
         else {
             lives = lives - 1;
             if (!lives) {
-                alert("GAME OVER");
-                document.location.reload();
+                stop("Game Over")
+                gameOver = true
             }
             else {
                 x = canvas.width / 2;
@@ -174,4 +189,9 @@ function draw() {
     y += dy;
 }
 
-setInterval(draw, 1);
+window.onload = () => {
+    if(difficulty === "1") {
+        document.querySelector(".ulaps").style.display = "flex"
+    }
+    startInterval = setInterval(draw, parseInt(difficulty ?? 10));
+}
